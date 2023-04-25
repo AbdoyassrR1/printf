@@ -204,12 +204,12 @@ int write_unsgnd(int is_negative, int ind,
  * @flags: Flag specifier
  * @padd: Char representing the padding
  * @extra_c: Char representing extra char
- * @padd_start: Index at which padding should start
+ * @paddstart: Index at which padding should start
  *
  * Return: Number of written chars.
  */
 int write_pointer(char buffer[], int ind, int length,
-	int width, int flags, char padd, char extra_c, int padd_start)
+	int width, int flags, char padd, char extra_c, int paddstart)
 {
 	int x;
 
@@ -237,11 +237,11 @@ int write_pointer(char buffer[], int ind, int length,
 		else if (!(flags & FL_MINUS) && padd == '0')/* extra char to left of padd */
 		{
 			if (extra_c)
-				buffer[--padd_start] = extra_c;
+				buffer[--paddstart] = extra_c;
 			buffer[1] = '0';
 			buffer[2] = 'x';
-			return (write(1, &buffer[padd_start], x - padd_start) +
-				write(1, &buffer[ind], length - (1 - padd_start) - 2));
+			return (write(1, &buffer[paddstart], x - paddstart) +
+				write(1, &buffer[ind], length - (1 - paddstart) - 2));
 		}
 	}
 	buffer[--ind] = 'x';
