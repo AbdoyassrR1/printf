@@ -132,5 +132,5 @@ char *get_width(char *s, params_t *params, va_list ap)
 			i = i * 10 + (*s++ - '0');
 	}
 	params->width = i;
-	return (s);
+	return (s);
 }
