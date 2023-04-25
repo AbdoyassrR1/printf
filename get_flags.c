@@ -13,7 +13,7 @@ int get_flags(const char *format, int *i)
 	int j, curri;
 	int flags = 0;
 	const char FLAGS_CH[] = {'-', '+', '0', '#', ' ', '\0'};
-	const int FLAGS_ARR[] = {FL_MINUS, FL_PLUS, FL_ZERO, FL_HASH, FL_SPACE, 0};
+	const int FLAGS_ARR[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
 
 	for (curri = *i + 1; format[curri] != '\0'; curri++)
 	{
@@ -30,5 +30,5 @@ int get_flags(const char *format, int *i)
 
 	*i = curri - 1;
 
-	return (flags);
+	return (flags);
 }

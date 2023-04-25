@@ -69,7 +69,7 @@ int print_octal(va_list types, char buffer[],
 		num /= 8;
 	}
 
-	if (flags & FL_HASH && init_num != 0)
+	if (flags & F_HASH && init_num != 0)
 		buffer[x--] = '0';
 
 	x++;
@@ -149,7 +149,7 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 		num /= 16;
 	}
 
-	if (flags & FL_HASH && init_num != 0)
+	if (flags & F_HASH && init_num != 0)
 	{
 		buffer[x--] = flag_ch;
 		buffer[x--] = '0';
@@ -157,5 +157,5 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 
 	x++;
 
-	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
+	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
 }

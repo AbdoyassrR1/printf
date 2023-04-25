@@ -56,7 +56,7 @@ int print_string(va_list types, char buffer[],
 
 	if (width > length)
 	{
-		if (flags & FL_MINUS)
+		if (flags & F_MINUS)
 		{
 			write(1, &str[0], length);
 			for (x = width - length; x > 0; x--)
@@ -184,5 +184,5 @@ int print_binary(va_list types, char buffer[],
 			count++;
 		}
 	}
-	return (count);
+	return (count);
 }
