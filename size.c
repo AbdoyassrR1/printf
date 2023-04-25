@@ -22,5 +22,5 @@ int get_size(const char *format, int *i)
 	else
 		*i = curr;
 
-	return (SIZE);
+	return (SIZE);
 }
