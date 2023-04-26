@@ -58,7 +58,7 @@ int get_print_func(char *s, va_list ap, params_t *params)
 /**
  * get_flag - finds the flag func.
  * @params: the parameters struct
- *
+ * @s: the format string
  * Return: if flag was valid
  */
 int get_flag(char *s, params_t *params)
